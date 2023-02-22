@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Link as RLink, Route, Routes } from "react-router-dom";
+import { BookingPage } from "./pages/BookingPage";
+import { ROUTES } from "./constants/routes";
+import { ConfirmedBooking } from "./components/ConfirmedBooking";
+import { HStack, Link } from "@chakra-ui/react";
+import { HomePage } from "./pages/HomePage";
+import logo from "./images/logo.png";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="container">
+			<div className="curve-background" />
+
+			<nav>
+				<HStack maxWidth={800} px={4} mx="auto" justifyContent="center">
+					<RLink to={ROUTES.HOME}>
+						<img src={logo} alt="header-logo" className="header-logo" />
+					</RLink>
+
+					<Link as={RLink} to={ROUTES.HOME} className="nav-item">
+						Home
+					</Link>
+
+					<Link as={RLink} to={ROUTES.BOOKING} className="nav-item">
+						Book
+					</Link>
+				</HStack>
+			</nav>
+
+			<Routes>
+				<Route path={ROUTES.BOOKING} element={<BookingPage />}></Route>
+				<Route
+					path={ROUTES.CONFIRMED}
+					element={<ConfirmedBooking />}
+				></Route>
+				<Route path={ROUTES.HOME} element={<HomePage />}></Route>
+			</Routes>
+
+			<footer className="footer">
+				<hr />
+				<p>Copyright Little Lemon</p>
+			</footer>
+		</div>
+	);
 }
 
 export default App;

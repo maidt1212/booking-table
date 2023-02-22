@@ -1,0 +1,11 @@
+.booking-form {
+	width: 100%;
+	display: grid;
+	gap: 20px;
+	position: relative;
+}
+
+.booking-banner {
+	width: 100%;
+	object-fit: contain;
+}
