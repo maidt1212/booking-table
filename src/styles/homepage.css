@@ -1,0 +1,72 @@
+:root {
+	--border-radius: 16px;
+}
+
+main {
+	padding-left: 60px;
+	padding-right: 60px;
+}
+
+/* Banner */
+.banner {
+	border-radius: var(--border-radius);
+	position: relative;
+	overflow: hidden;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+.banner::after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: black;
+	opacity: 0.4;
+}
+.banner img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.banner__content {
+	color: white;
+	font-size: 36px;
+	font-weight: bold;
+	padding: 30px;
+	position: relative;
+	z-index: 1;
+}
+.banner__title {
+	text-transform: capitalize;
+}
+.banner__desc {
+	font-size: 14px;
+}
+
+/* Card list */
+.card {
+	background-color: #f7e4d4;
+	border-radius: var(--border-radius);
+	padding: 16px;
+	font-size: 14px;
+	line-height: 1.5;
+}
+.card__img {
+	width: 100%;
+	aspect-ratio: 1.5;
+}
+.card__img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.card ul {
+	list-style: none;
+}
